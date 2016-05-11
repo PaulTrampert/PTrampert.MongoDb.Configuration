@@ -17,7 +17,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version Condition="$(Configuration) != 'Release'">$(Version)-build$(BuildNumber)</Version>
+    <PreRelease Condition="$(Configuration) != 'Release'">-build$(BuildNumber)</PreRelease>
   </PropertyGroup>
   
   <ItemGroup>
@@ -28,7 +28,7 @@
 
   <Target Name="Props">
     <Message Text="Configuration = $(Configuration)"/>
-    <Message Text="Version = $(Version)"/>
+    <Message Text="Version = $(Version)$(PreRelease)"/>
     <Message Text="AssemblyVersion = $(AssemblyVersion)"/>
   </Target>
   
@@ -43,7 +43,7 @@
       OutputFile="$(MSBuildProjectDirectory)\Version.cs"
       AssemblyVersion="$(AssemblyVersion)"
       AssemblyFileVersion="$(AssemblyVersion)"
-      AssemblyInformationalVersion="$(Version)"/>
+      AssemblyInformationalVersion="$(Version)$(PreRelease)"/>
   </Target>
   
   <Target Name="Restore">
