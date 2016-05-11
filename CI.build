@@ -68,7 +68,8 @@
       ToolPath="$(NUnit3Path)"
       Assemblies="@(TestProject)" 
       OutputXmlFile="$(OutputDir)\TestResults.xml;format=nunit2" 
-      ProjectConfiguration="$(Configuration)"/>
+      ProjectConfiguration="$(Configuration)"
+      ContinueOnError="true"/>
   </Target>
 
   <Target Name="Package" DependsOnTargets="Build;OutputDir">
