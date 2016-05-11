@@ -4,6 +4,8 @@ namespace PTrampert.MongoDb.Configuration
 {
     public interface IMongoFactory
     {
-        IMongoClient GetClient();
+        IMongoClient Client { get; }
+
+        IMongoDatabase Database { get; }
     }
 }

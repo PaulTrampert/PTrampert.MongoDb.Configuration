@@ -6,6 +6,10 @@ namespace PTrampert.MongoDb.Configuration
     {
         private readonly IMongoConfiguration _mongoConfiguration;
 
+        private IMongoClient _client;
+
+        private IMongoDatabase _database;
+
         public MongoFactory(IMongoConfiguration mongoConfiguration)
         {
             _mongoConfiguration = mongoConfiguration;
@@ -16,9 +20,8 @@ namespace PTrampert.MongoDb.Configuration
             _mongoConfiguration = MongoConfigLoader.LoadFromConfigFile();
         }
 
-        public IMongoClient GetClient()
-        {
-            return new MongoClient(_mongoConfiguration.ConnectionString);
-        }
+        public IMongoClient Client => _client ?? (_client = new MongoClient(_mongoConfiguration.ConnectionString));
+
+        public IMongoDatabase Database => _database ?? (_database = Client.GetDatabase(_mongoConfiguration.DatabaseName));
     }
 }

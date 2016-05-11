@@ -14,15 +14,29 @@ namespace PTrampert.MongoDb.Configuration.Test
         [Test]
         public void CreatesMongoClientFromConfig()
         {
-            var result = new MongoFactory().GetClient();
+            var result = new MongoFactory().Client;
             Assert.That(result, Is.Not.Null);
         }
 
         [Test]
         public void MongoClientIsConfiguredProperly()
         {
-            var result = new MongoFactory().GetClient();
+            var result = new MongoFactory().Client;
             Assert.That(result.Settings.WriteConcern, Is.EqualTo(WriteConcern.WMajority));
+        }
+
+        [Test]
+        public void MongoDatabaseGetsDatabaseFromConfig()
+        {
+            var result = new MongoFactory().Database;
+            Assert.That(result, Is.Not.Null);
+        }
+
+        [Test]
+        public void MongoDatabaseIsCorrect()
+        {
+            var result = new MongoFactory().Database;
+            Assert.That(result.DatabaseNamespace.DatabaseName, Is.EqualTo("testdb"));
         }
     }
 }
