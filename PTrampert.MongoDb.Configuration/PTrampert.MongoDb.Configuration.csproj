@@ -57,8 +57,10 @@
       <Link>Version.cs</Link>
     </Compile>
     <Compile Include="IMongoConfiguration.cs" />
+    <Compile Include="IMongoFactory.cs" />
     <Compile Include="MongoConfigLoader.cs" />
     <Compile Include="MongoConfigurationSection.cs" />
+    <Compile Include="MongoFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
