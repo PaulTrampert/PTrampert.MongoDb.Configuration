@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTrampert.MongoDb.Configura
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTrampert.MongoDb.Configuration.Test", "PTrampert.MongoDb.Configuration.Test\PTrampert.MongoDb.Configuration.Test.csproj", "{F5EC09CF-F18C-4869-A4A7-37A15597ACF1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{95D04993-6EE5-4828-97DB-04D3AB924724}"
+	ProjectSection(SolutionItems) = preProject
+		CI.build = CI.build
+		Version.cs = Version.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

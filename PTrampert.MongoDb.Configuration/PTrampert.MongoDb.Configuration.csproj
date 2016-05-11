@@ -53,6 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Version.cs">
+      <Link>Version.cs</Link>
+    </Compile>
     <Compile Include="IMongoConfiguration.cs" />
     <Compile Include="MongoConfigLoader.cs" />
     <Compile Include="MongoConfigurationSection.cs" />
