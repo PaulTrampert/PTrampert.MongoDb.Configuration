@@ -1,0 +1,4 @@
+[submodule "build-tools"]
+	path = build-tools
+	url = git@bitbucket.org:paul_trampert/build-tools.git
+	branch = master
