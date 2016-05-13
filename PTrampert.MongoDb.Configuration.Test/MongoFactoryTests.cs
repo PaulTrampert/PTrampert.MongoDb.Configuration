@@ -12,6 +12,13 @@ namespace PTrampert.MongoDb.Configuration.Test
     public class MongoFactoryTests
     {
         [Test]
+        public void CanConstructFromConfigObject()
+        {
+            var config = new MongoConfigurationSection();
+            Assert.DoesNotThrow(() => new MongoFactory(config));
+        }
+
+        [Test]
         public void CreatesMongoClientFromConfig()
         {
             var result = new MongoFactory().Client;
