@@ -1,6 +1,5 @@
 # PTrampert.MongoDb.Configuration
 Simple configuration library for MongoDb.
-[![Build Status](https://jenkins.ptrampert.com/buildStatus/icon?job=PTrampert.MongoDb.Configuration)](https://jenkins.ptrampert.com/job/PTrampert.MongoDb.Configuration)
 
 ## Getting Started
 * Install the [nuget package](https://www.nuget.org/packages/ptrampert.mongodb.configuration).
