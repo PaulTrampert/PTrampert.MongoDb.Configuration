@@ -56,6 +56,9 @@
     <Compile Include="..\Version.cs">
       <Link>Version.cs</Link>
     </Compile>
+    <Compile Include="AdvancedMongoConfigSection.cs" />
+    <Compile Include="Host.cs" />
+    <Compile Include="HostCollection.cs" />
     <Compile Include="IMongoConfiguration.cs" />
     <Compile Include="IMongoFactory.cs" />
     <Compile Include="MongoConfigLoader.cs" />

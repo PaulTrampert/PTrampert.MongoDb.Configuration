@@ -7,7 +7,7 @@ namespace PTrampert.MongoDb.Configuration
         private const string ConnectionStringPropertyName = "connectionString";
         private const string DatabaseNamePropertyName = "databaseName";
 
-        [ConfigurationProperty(ConnectionStringPropertyName, DefaultValue = "mongodb://localhost/?w=majority", IsRequired = false)]
+        [ConfigurationProperty(ConnectionStringPropertyName, IsRequired = true)]
         public string ConnectionString
         {
             get { return (string) this[ConnectionStringPropertyName]; }
