@@ -17,7 +17,7 @@ namespace PTrampert.MongoDb.Configuration
 
         public MongoFactory()
         {
-            _mongoConfiguration = MongoConfigLoader.LoadFromConfigFile();
+            _mongoConfiguration = MongoConfigLoader.LoadFromConfigFile("mongodb");
         }
 
         public IMongoClient Client => _client ?? (_client = new MongoClient(_mongoConfiguration.ConnectionString));
