@@ -1,9 +1,27 @@
+using System;
 using System.Configuration;
 
 namespace PTrampert.MongoDb.Configuration
 {
+    [ConfigurationCollection(typeof(Host))]
     public class HostCollection : ConfigurationElementCollection
     {
+        internal const string PropertyName = "host";
+
+        protected override string ElementName => PropertyName;
+
+        protected override bool IsElementName(string elementName)
+        {
+            return elementName.Equals(PropertyName, StringComparison.InvariantCultureIgnoreCase);
+        }
+
+        public override ConfigurationElementCollectionType CollectionType => ConfigurationElementCollectionType.BasicMapAlternate;
+
+        public override bool IsReadOnly()
+        {
+            return false;
+        }
+
         protected override ConfigurationElement CreateNewElement()
         {
             return new Host();
@@ -39,5 +57,7 @@ namespace PTrampert.MongoDb.Configuration
         {
             BaseRemove(name);
         }
+
+        public Host this[int idx] => (Host) BaseGet(idx);
     }
 }

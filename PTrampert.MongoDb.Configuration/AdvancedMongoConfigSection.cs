@@ -11,7 +11,7 @@ namespace PTrampert.MongoDb.Configuration
         private const string UsernamePropertyName = "username";
         private const string PasswordPropertyName = "password";
         private const string HostsPropertyName = "hosts";
-        private const string ConnectionPropertiesPropertyName = "properties";
+        private const string ConnectionPropertiesPropertyName = "connectionProperties";
 
         [ConfigurationProperty(UsernamePropertyName, IsRequired = false)]
         public string Username
@@ -61,7 +61,7 @@ namespace PTrampert.MongoDb.Configuration
             }
         }
 
-        [ConfigurationProperty(DatabaseNamePropertyName, IsRequired = true)]
+        [ConfigurationProperty(DatabaseNamePropertyName, IsRequired = false)]
         public string DatabaseName
         {
             get { return (string) this[DatabaseNamePropertyName]; }

@@ -7,6 +7,12 @@ namespace PTrampert.MongoDb.Configuration
         private const string NamePropertyName = "name";
         private const string PortPropertyName = "port";
 
+        public Host(string name, int port)
+        {
+            Name = name;
+            Port = port;
+        }
+
         public Host()
         {
             Port = 27017;

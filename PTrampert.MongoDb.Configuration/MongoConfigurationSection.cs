@@ -14,7 +14,7 @@ namespace PTrampert.MongoDb.Configuration
             set { this[ConnectionStringPropertyName] = value; }
         }
 
-        [ConfigurationProperty(DatabaseNamePropertyName, IsRequired = true)]
+        [ConfigurationProperty(DatabaseNamePropertyName, IsRequired = false)]
         public string DatabaseName
         {
             get { return (string) this[DatabaseNamePropertyName]; }
