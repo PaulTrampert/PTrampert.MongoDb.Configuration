@@ -41,4 +41,4 @@ var database = factory.Database;
 ```
 
 ### Contributing
-If you would like to contribute, please submit a pull request to the dev branch. Pull requests to master will be rejected, as master is reserved for releasable code from the time of this writing forward.
+If you would like to contribute, please submit a pull request to master. If accepted, it will be merged in and published in the next release.
