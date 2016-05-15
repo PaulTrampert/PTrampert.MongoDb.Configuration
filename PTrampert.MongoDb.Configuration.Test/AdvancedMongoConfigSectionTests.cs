@@ -55,11 +55,37 @@ namespace PTrampert.MongoDb.Configuration.Test
         [Test]
         public void CanReadWriteProperties()
         {
-            Config.Properties = new NameValueConfigurationCollection();
-            Config.Properties.Add(new NameValueConfigurationElement("thing", "stuff"));
-            var element = Config.Properties.Cast<NameValueConfigurationElement>().First();
+            Config.ConnectionProperties = new NameValueConfigurationCollection();
+            Config.ConnectionProperties.Add(new NameValueConfigurationElement("thing", "stuff"));
+            var element = Config.ConnectionProperties.Cast<NameValueConfigurationElement>().First();
             Assert.That(element.Name, Is.EqualTo("thing"));
             Assert.That(element.Value, Is.EqualTo("stuff"));
+        }
+
+        [Test]
+        public void MinimalConnectionStringIsCorrect()
+        {
+            Config.Hosts = new HostCollection();
+            Config.Hosts.Add(new Host {Name = "localhost"});
+            Config.DatabaseName = "SomeDb";
+            Assert.That(Config.ConnectionString, Is.EqualTo("mongodb://localhost:27017/SomeDb"));
+        }
+
+        [Test]
+        public void FullConnectionStringIsCorrect()
+        {
+            Config.Hosts = new HostCollection();
+            Config.Hosts.Add(new Host { Name = "remote1.test.com", Port = 123 });
+            Config.Hosts.Add(new Host { Name = "remote2.test.com", Port = 456 });
+            Config.Hosts.Add(new Host { Name = "remote3.test.com", Port = 789 });
+            Config.DatabaseName = "SomeDb";
+            Config.Username = "tester";
+            Config.Password = "asdfasdf";
+            Config.ConnectionProperties = new NameValueConfigurationCollection();
+            Config.ConnectionProperties.Add(new NameValueConfigurationElement("w", "majority"));
+            Config.ConnectionProperties.Add(new NameValueConfigurationElement("j", "1"));
+            Config.ConnectionProperties.Add(new NameValueConfigurationElement("has&encoded", "chara(ter"));
+            Assert.That(Config.ConnectionString, Is.EqualTo("mongodb://tester:asdfasdf@remote1.test.com:123,remote2.test.com:456,remote3.test.com:789/SomeDb?w=majority&j=1&has%26encoded=chara(ter"));
         }
     }
 }

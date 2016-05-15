@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdvancedMongoConfigSectionTests.cs" />
+    <Compile Include="HostCollectionTests.cs" />
     <Compile Include="MongoConfigLoaderTests.cs" />
     <Compile Include="MongoConfigurationSectionTests.cs" />
     <Compile Include="MongoFactoryTests.cs" />

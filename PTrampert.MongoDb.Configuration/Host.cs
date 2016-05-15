@@ -7,6 +7,11 @@ namespace PTrampert.MongoDb.Configuration
         private const string NamePropertyName = "name";
         private const string PortPropertyName = "port";
 
+        public Host()
+        {
+            Port = 27017;
+        }
+
         [ConfigurationProperty(NamePropertyName, IsRequired = true)]
         public string Name
         {
@@ -14,11 +19,16 @@ namespace PTrampert.MongoDb.Configuration
             set { this[NamePropertyName] = value; }
         }
 
-        [ConfigurationProperty(PortPropertyName, DefaultValue = 2701, IsRequired = false)]
+        [ConfigurationProperty(PortPropertyName, DefaultValue = 27017, IsRequired = false)]
         public int Port
         {
             get { return (int) this[PortPropertyName]; }
             set { this[PortPropertyName] = value; }
+        }
+
+        public override string ToString()
+        {
+            return $"{Name}:{Port}";
         }
     }
 }
