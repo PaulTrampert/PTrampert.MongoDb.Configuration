@@ -14,7 +14,7 @@ Add the following to your App.config or Web.config
 Alternatively, you can use the advanced mongo configuration, like so.
 ```xml
 <configSections>
-  <section name="mongodb" type="PTrampert.MongoDb.Configuration.AdvancedMongoConfigSection, PTrampert.MongoDb.Configuration" />
+  <section name="mongodbAdv" type="PTrampert.MongoDb.Configuration.AdvancedMongoConfigSection, PTrampert.MongoDb.Configuration" />
 </configSections>
 <mongodbAdv username="tester" password="asdfasdf" databaseName="somedb">
   <hosts>
